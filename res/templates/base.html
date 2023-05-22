@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+    <title>Главная</title>
+    <link rel="stylesheet" href="{% static 'css\\style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    {% endblock head %}
+</head>
+<body>
+<div class="header">
+    <div class="header__logo">
+        <p>FlowerShop</p>
+    </div>
+    <div class="header__nav">
+        <div class="header__nav__list">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="subheader">
+    <div class="cart">
+            <p>Ваша корзина пуста</p>
+    </div>
+</div>
+
+{% block content %}
+
+    {% block bouquet %}
+    {% endblock %}
+
+{% endblock %}
+
+<div class="footer">
+    <div class="footer__privacy">
+        <li><a href="#" class="privacy">Политика конфиденциальности</a></li>
+    </div>
+    <div class="footer__logo">
+        <p class="logo">FlowerShop</p>
+    </div>
+    <div class="footer__made">
+        <p>Made by ReMueff</p>
+    </div>
+</div>
+
+</body>
+</html>

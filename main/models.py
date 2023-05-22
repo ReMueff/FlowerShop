@@ -10,11 +10,16 @@ class Flower(models.Model):
 
 
 class Bouquet(models.Model):
+    name = models.CharField(default='Букет', max_length=150, verbose_name=_("Bouquet's name"))
     flowers = models.ManyToManyField(Flower, through="BouquetFlowers")
     description = models.TextField(max_length=1000, verbose_name=_("Bouquet's description"))
 
+    def get_absolute_url(self):
+        return f'/main/{self.pk}'
+
 
 class BouquetFlowers(models.Model):
-    flowers = models.ForeignKey(Flower, on_delete=models.CASCADE, verbose_name=_("Flower"))
-    bouquets = models.ForeignKey(Bouquet, on_delete=models.CASCADE, verbose_name=_("Bouquet"))
+    flower = models.ForeignKey(Flower, on_delete=models.CASCADE, verbose_name=_("Flower"))
+    bouquet = models.ForeignKey(Bouquet, on_delete=models.CASCADE, verbose_name=_("Bouquet"))
     amount = models.IntegerField(default=0)
+    position = models.IntegerField(choices=[(i, i) for i in range(1, 9)], blank=True, null=True)

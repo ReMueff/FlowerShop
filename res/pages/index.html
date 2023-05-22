@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+<div class="body">
+    <div class="body__content">
+        <div class="body__content__head">
+            <h2>Каталог</h2>
+            <div class="body__content__head__filter">
+                <form action="#">
+                    <input type="text" placeholder="Search" name="search" class="filter-input">
+                    <button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
+           <a href="main/constructor">
+               <h2 >Добавить новый букет
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+               </h2>
+           </a>
+        <div class="body__content-list">
+            {% block bouquet %}
+            {% for bouquet in bouquet_list %}
+
+                {% include 'bouquet.html' %}
+
+            {% endfor %}
+            {% endblock %}
+
+        {% if user.is_authenticated %}
+            <p>Hello, {{ user.email }}</p>
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+</body>
+</html>

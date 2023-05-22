@@ -1,0 +1,15 @@
+{#<div class="body__content-list__element">#}
+{#    <h2><a href="/main/{{bouquet.id}}/">{{bouquet.name}}</a></h2>#}
+{#    <div class="middle-elements">#}
+{#        <p>{{bouquet.description}}</p>#}
+{#    </div>#}
+{#    <div class="more-btn">#}
+{#        <a href="{{ bouquet.pk }}/">Подробнее</a>#}
+{#    </div>#}
+{#</div>#}
+<div class="body__content-list__element">
+    <a href="{{ bouquet.get_absolute_url }}">
+        <img src="media/{% if bouquet.image %}{{ bouquet.image.url }}{% else %}no-image.png{% endif %}">
+    </a>
+    <a href="{{ bouquet.get_absolute_url }}">{{ bouquet.name }}</a><br>
+</div>
