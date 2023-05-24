@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+<div class="body">
+    <div class="body__content">
+        <div class="body__content-set">
+            {% block bouquet %}
+                <table>
+                {% for i in range %}
+                    {% if i in open_tr %}
+                        <tr>
+                        {% include 'bouquetset.html' %}
+                    {% elif i in close_tr %}
+                        {% include 'bouquetset.html' %}
+                        </tr>
+                    {% else %}
+                        {% include 'bouquetset.html' %}
+                    {% endif %}
+
+                {% endfor %}
+                </table>
+            {% endblock %}
+
+            {% block form %}
+                 <form method="post">
+                    {% csrf_token %}
+                        <table>
+                            {{ form.as_table }}
+                        </table>
+                    <button type="submit">Принять изменения</button>
+                 </form>
+            {% endblock %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+</body>
+</html>
+
+
+
+{#{% for position_id, pattern in positions.items %}#}
+{#                <p>{{ position_id }} || {{ pattern }}</p>#}
+{#                {% include 'bouquetset.html' %}#}
+{##}
+{#            {% endfor %}#}

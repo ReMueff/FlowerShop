@@ -18,11 +18,13 @@
                 </form>
             </div>
         </div>
+        <div class="constructor">
            <a href="main/constructor">
                <h2 >Добавить новый букет
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                </h2>
            </a>
+        </div>
         <div class="body__content-list">
             {% block bouquet %}
             {% for bouquet in bouquet_list %}
@@ -32,10 +34,10 @@
             {% endfor %}
             {% endblock %}
 
+        </div>
         {% if user.is_authenticated %}
             <p>Hello, {{ user.email }}</p>
         {% endif %}
-        </div>
     </div>
 </div>
 {% endblock content %}

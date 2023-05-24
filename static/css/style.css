@@ -5,6 +5,7 @@
     padding: 5px;
     align-items: center;
     margin-bottom: 10px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 }
 .header.header__logo p{
     font-family: Arial, monospace;
@@ -31,18 +32,24 @@
 }
 
 .body__content{
-    padding: 4%;
+    /*padding: 4%;*/
     background: linear-gradient(180deg, #aede87, #4b7e21);
     width: 100%;
 }
 
 
-.body__content__head{
+.body__content__head {
     display: inline-flex;
     justify-content: space-between;
     margin-bottom: 10px;
     align-items: center;
     width: 100%;
+}
+
+.constructor h2, a{
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
 }
 
 .search-btn{
@@ -51,34 +58,35 @@
 }
 .filter-input{
     background-color: rgba(255, 2555, 255, 0.0);
-    border: 2px solid gray;
+    border: 2px solid #000000;
     border-radius: 5px;
     font-size: 1em;
 }
 .body__content-list__element{
-    margin-bottom: 10px;
-    background: linear-gradient(180deg, #aede87, #4b7e21);
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background: linear-gradient(180deg, #4b7e21, #aede87);
     border-radius: 10px;
     padding: 7px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 30%;
 }
 
 .body__content-list{
     display: flex;
     flex-direction: row;
-    flex-basis: 25%;
     flex-wrap: wrap;
 }
 
 
 .body__content-list__element h2 a, .body__content-list__element h2 a:link{
     text-decoration: none;
-    color: aliceblue;
+    color: #000000;
 }
 .body__content-list__element p{
-    color: aliceblue;
+    color: #000000;
     font-size: 20pt;
 }
 .body__content-list__element .more-btn{
@@ -106,16 +114,9 @@
     margin-left: 5vw;
 }
 
-.body__content-list__element__image{
-    width: 300px;
-    height: 400px;
-    margin: 2.5vw;
-    border-radius: 10px;
-}
-
 .body__content-list__element .more-btn a, .body__content-list__element .more-btn a:link{
     text-decoration: none;
-    color: aliceblue;
+    color: #000000;
 }
 
 .footer{
@@ -126,6 +127,8 @@
     align-items: center;
     font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
     padding: 0 5vw;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .body{
@@ -143,7 +146,7 @@
     border: none;
     border-radius: 10px;
     background: linear-gradient(90deg, #4b7e21, #aede87);
-    color: aliceblue;
+    color: #000000;
     font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 }
 .order-to__btn:hover{
@@ -160,10 +163,9 @@
     text-align: center;
 }
 .cart tr, th, td{
-    padding: 15px 5px;
-    border-radius: 10px;
-    margin-bottom: 4vh;
-    border-top: 2px solid black;
+    /*padding: 15px 5px;*/
+    border-radius: 5px;
+    /*border-top: 2px solid black;*/
     /*background-color: #d39e8d;*/
 }
 
@@ -186,4 +188,15 @@ thead th{
 
 .choose-quantity{
     width: 40px;
+}
+
+.privacy {
+    text-decoration: none;
+    color: black;
+}
+
+.body__content-list__element__image{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
 }

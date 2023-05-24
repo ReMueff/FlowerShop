@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     path('main/', views.MainPage.as_view(), name='main'),
+    path('main/<int:pk>', views.Reviewer.as_view(), name='review')
 ]
 
 
