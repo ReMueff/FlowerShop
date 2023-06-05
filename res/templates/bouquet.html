@@ -1,15 +1,6 @@
-{#<div class="body__content-list__element">#}
-{#    <h2><a href="/main/{{bouquet.id}}/">{{bouquet.name}}</a></h2>#}
-{#    <div class="middle-elements">#}
-{#        <p>{{bouquet.description}}</p>#}
-{#    </div>#}
-{#    <div class="more-btn">#}
-{#        <a href="{{ bouquet.pk }}/">Подробнее</a>#}
-{#    </div>#}
-{#</div>#}
+{% load static %}
 <div class="body__content-list__element">
-    <a href="{{ bouquet.get_absolute_url }}">
-        <img src="media/{% if bouquet.image %}{{ bouquet.image.url }}{% else %}no-image.png{% endif %}">
-    </a>
+        <img class="body__content-list__elem_image" src="/main{% if bouquet.collage %}{{ bouquet.collage.url }}
+{% else %}/media/bouquet/no-image.jpg{% endif %}">
     <a href="{{ bouquet.get_absolute_url }}">{{ bouquet.name }}</a><br>
 </div>

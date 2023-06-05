@@ -1,0 +1,31 @@
+{% load static %}
+{% block content %}
+    <table>
+    <thead>
+      <h1>Название букета: {{ bouquet.name }}</h1>
+    </thead>
+    <tbody>
+    <td>
+      <div class="body__content-bouquet-description">
+            {% if bouquet.collage != None %}
+                <img src="/main{% if bouquet.collage %}{{ bouquet.collage.url }}
+                    {% else %}/media/bouquet/no-image.jpg{% endif %}" class="body__content-list__element__image">
+            {% endif %}
+      </div>
+    </td>
+    <td>
+        <p><strong>Описание:</strong>
+        <td>{{ bouquet.description }}</td></p>
+    </td>
+{#    <td>#}
+{#        <p>Количество цветов в букете</p>#}
+{#        <td> {{ bouquet.amount }} </td>#}
+{#    </td>#}
+    </tbody>
+    </table>
+    <button type="submit">Добавить букет в корзину</button>
+    <form>
+
+        <button type="submit"><a href="/main/{{ bouquet.id }}/review">Изменить букет</a></button>
+    </form>
+{% endblock %}

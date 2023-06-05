@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+<div class="body">
+    <div class="body__content">
+        <div class="body__content-set">
+            {% block bouquet %}
+            {% for position in positions %}
+                <p>position || {{ forloop.counter }}</p>
+{#                {% include 'bouquetset.html' %}#}
+
+            {% endfor %}
+            {% endblock %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+</body>
+</html>

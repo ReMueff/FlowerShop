@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',   # Users app
     'profiles',   # Profiles app
     'cart',   # Cart app
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

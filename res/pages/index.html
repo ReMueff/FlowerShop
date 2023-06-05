@@ -19,11 +19,15 @@
             </div>
         </div>
         <div class="constructor">
-           <a href="main/constructor">
-               <h2 >Добавить новый букет
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-               </h2>
-           </a>
+           <form method="post">
+                {% csrf_token %}
+               <button type="submit">
+                   <h2>
+                 Добавить новый букет
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                   </h2>
+               </button>
+           </form>
         </div>
         <div class="body__content-list">
             {% block bouquet %}

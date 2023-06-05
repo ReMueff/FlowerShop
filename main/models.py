@@ -14,6 +14,7 @@ class Bouquet(models.Model):
     name = models.CharField(default='Букет', max_length=150, verbose_name=_("Bouquet's name"))
     flowers = models.ManyToManyField(Flower, through="BouquetFlowers")
     description = models.TextField(max_length=1000, verbose_name=_("Bouquet's description"))
+    collage = models.ImageField(null=True, upload_to='bouquet', verbose_name=_('Image'))
 
     def get_absolute_url(self):
         return f'/main/{self.pk}'

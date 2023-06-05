@@ -6,12 +6,13 @@
 <head>
     <meta charset="UTF-8">
 </head>
-<body>
+<body data-media-url="{% get_media_prefix %}">
 {% block content %}
 <div class="body">
-    <div class="body__content">
+    <div class="body__content-form">
         <div class="body__content-set">
-            {% block bouquet %}
+            <div class="bouquet">
+                {% block bouquet %}
                 <table>
                 {% for i in range %}
                     {% if i in open_tr %}
@@ -23,21 +24,29 @@
                     {% else %}
                         {% include 'bouquetset.html' %}
                     {% endif %}
-
                 {% endfor %}
                 </table>
             {% endblock %}
-
+            </div>
+            <div class="form">
             {% block form %}
                  <form method="post">
                     {% csrf_token %}
                         <table>
-                            {{ form.as_table }}
+                            {{ position_form.as_p }}
                         </table>
                     <button type="submit">Принять изменения</button>
                  </form>
-            {% endblock %}
 
+                <form method="post">
+                    {% csrf_token %}
+                        <table>
+                            {{ bouquet_form.as_p }}
+                        </table>
+                    <button type="submit">Сохранить букет</button>
+                 </form>
+            {% endblock %}
+            </div>
         </div>
     </div>
 </div>

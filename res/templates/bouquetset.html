@@ -2,8 +2,7 @@
 <td>
     <div class="body__content-bouquet_set__element">
         {% if positions|get_value:forloop.counter != None %}
-{#            <p>{{ positions|get_value:forloop.counter }}</p>#}
-            <img src="media/{{ positions|get_value:forloop.counter }}" class="body__content-list__element__image">
+            <img src="/main/media/{{ positions|get_value:forloop.counter }}" class="body__content-list__element__image">
         {% else %}
             <p>{{ forloop.counter }}</p>
         {% endif %}
